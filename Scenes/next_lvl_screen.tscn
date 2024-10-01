@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/font1/SimpleLife.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/NextLevelLabel.gd" type="Script" id=2]
+[ext_resource path="res://Assets/audio/next_level1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/audio/clap and wow.wav" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 130
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="NextLevel" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+margin_right = 576.0
+margin_bottom = 1024.0
+color = Color( 0.952941, 0.952941, 0.952941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextLevelLabel" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="NextLevelLabel"]
+margin_top = 373.774
+margin_right = 576.0
+margin_bottom = 668.774
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.556863, 0.556863, 0.556863, 1 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="NextLevelLabel"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NextLevelLabel"]
+stream = ExtResource( 3 )
+volume_db = 3.0
+pitch_scale = 0.89
+autoplay = true
+
+[node name="ReshuffleSound" type="AudioStreamPlayer" parent="NextLevelLabel"]
+stream = ExtResource( 4 )

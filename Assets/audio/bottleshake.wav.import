@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bottleshake.wav-9aa9766931f4f95010d019f8078899ba.sample"
+
+[deps]
+
+source_file="res://Assets/audio/bottleshake.wav"
+dest_files=[ "res://.import/bottleshake.wav-9aa9766931f4f95010d019f8078899ba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

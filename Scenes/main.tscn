@@ -1,0 +1,468 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://Assets/audio/menu/game_name_scream.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/audio/menu/mainmenu_music.wav" type="AudioStream" id=2]
+[ext_resource path="res://Scenes/Title.gd" type="Script" id=3]
+[ext_resource path="res://Assets/video/splashscreen.webm" type="VideoStream" id=4]
+[ext_resource path="res://Assets/audio/opening_sound2.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/Splashscreen.gd" type="Script" id=6]
+[ext_resource path="res://Assets/textures/mainmenu/red_banner.jpg" type="Texture" id=7]
+[ext_resource path="res://Assets/textures/mainmenu/mainmenu_bg.jpg" type="Texture" id=8]
+[ext_resource path="res://Assets/textures/mainmenu/mainmenu_title.png" type="Texture" id=9]
+[ext_resource path="res://Assets/textures/mainmenu/mainmenu_fg.png" type="Texture" id=10]
+[ext_resource path="res://Assets/textures/mainmenu/eraser.png" type="Texture" id=11]
+[ext_resource path="res://Assets/audio/menu/btn_select.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/audio/menu/title_bounce.wav" type="AudioStream" id=13]
+[ext_resource path="res://Assets/audio/menu/slide.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/textures/mainmenu/head.png" type="Texture" id=15]
+[ext_resource path="res://Assets/textures/mainmenu/green_banner2.jpg" type="Texture" id=16]
+[ext_resource path="res://Assets/textures/mainmenu/head_press.png" type="Texture" id=17]
+[ext_resource path="res://Assets/textures/mainmenu/green_banner.jpg" type="Texture" id=18]
+[ext_resource path="res://Assets/textures/mainmenu/yellow_banner.jpg" type="Texture" id=19]
+[ext_resource path="res://Assets/textures/mainmenu/red_banner2.jpg" type="Texture" id=20]
+[ext_resource path="res://Scenes/MenuButtons.gd" type="Script" id=21]
+[ext_resource path="res://Assets/textures/mainmenu/yellow_banner2.jpg" type="Texture" id=22]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Assets/font1/Florsn02.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 75
+outline_size = 8
+outline_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 1.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.6, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 300, -600 ), Vector2( 300, -700 ), Vector2( -350, 0 ), Vector2( 0, -1576 ), Vector2( -576, -1050 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Eraser Strokes/stroke1:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 276, 55 ), Vector2( 372, -510 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Eraser Strokes/stroke2:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 756, -2077 ), Vector2( 317.67, -1315.46 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Eraser Strokes/stroke3:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -127.863, 33.5005 ), Vector2( -128.592, -1221.06 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Eraser Strokes/stroke4:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 613.497, -2732.78 ), Vector2( 61.6018, -1856.07 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.3, 0.5, 0.7, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 61.8, -111.2, 15.0, -50.5, 24.3 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 8, 2 ), Vector2( 1, 4 ), Vector2( 2, 0.5 ), Vector2( 0.9, 0.9 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.803922 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://Assets/font1/Louis George Cafe.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 150
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://Assets/font1/Louis George Cafe.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 200
+outline_size = 13
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 7 )
+
+[node name="Mainmenu" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="BG" type="TextureRect" parent="Background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Node2D" parent="Background"]
+position = Vector2( -460, 0 )
+scale = Vector2( 0.97, 1 )
+script = ExtResource( 3 )
+
+[node name="Titletexture" type="TextureRect" parent="Background/Title"]
+margin_left = 116.0
+margin_top = -54.0
+margin_right = 692.0
+margin_bottom = 522.0
+rect_scale = Vector2( 0.95, 0.95 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Background/Title"]
+
+[node name="BounceSound" type="AudioStreamPlayer" parent="Background/Title"]
+stream = ExtResource( 13 )
+volume_db = -10.0
+
+[node name="SlideSound" type="AudioStreamPlayer" parent="Background/Title"]
+stream = ExtResource( 14 )
+
+[node name="GameNameSound" type="AudioStreamPlayer" parent="Background/Title"]
+stream = ExtResource( 1 )
+volume_db = -80.0
+
+[node name="FG" type="TextureRect" parent="Background"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Copyright label" type="Label" parent="Background"]
+margin_left = 146.672
+margin_top = 978.769
+margin_right = 1230.67
+margin_bottom = 1061.77
+rect_scale = Vector2( 0.38, 0.38 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+text = "Developed by Djazy Faradj"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG_Splashscreen" type="ColorRect" parent="."]
+margin_top = -33.328
+margin_right = 576.0
+margin_bottom = 1166.67
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Splashscreen" type="VideoPlayer" parent="."]
+margin_left = 144.0
+margin_top = 256.0
+margin_right = 432.0
+margin_bottom = 768.0
+stream = ExtResource( 4 )
+autoplay = true
+buffering_msec = 10
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Splashscreen"]
+stream = ExtResource( 5 )
+volume_db = 1.0
+
+[node name="FadeOutWhite" type="ColorRect" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 576.0
+margin_bottom = 1024.0
+mouse_filter = 2
+color = Color( 0.952941, 0.952941, 0.952941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="FadeOutWhite"]
+
+[node name="Eraser Strokes" type="Node2D" parent="."]
+position = Vector2( 92.4268, 1085.94 )
+rotation = 0.261799
+
+[node name="stroke1" type="ColorRect" parent="Eraser Strokes"]
+show_behind_parent = true
+margin_left = 276.0
+margin_top = 55.0
+margin_right = 476.0
+margin_bottom = 1555.0
+color = Color( 0.952941, 0.952941, 0.952941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stroke2" type="ColorRect" parent="Eraser Strokes"]
+show_behind_parent = true
+margin_left = 756.0
+margin_top = -2077.0
+margin_right = 1156.0
+margin_bottom = -577.0
+rect_rotation = 15.0
+color = Color( 0.952941, 0.952941, 0.952941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stroke3" type="ColorRect" parent="Eraser Strokes"]
+show_behind_parent = true
+margin_left = -127.863
+margin_top = 33.5005
+margin_right = 247.137
+margin_bottom = 1533.5
+rect_rotation = 2.0
+color = Color( 0.952941, 0.952941, 0.952941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stroke4" type="ColorRect" parent="Eraser Strokes"]
+show_behind_parent = true
+margin_left = 613.497
+margin_top = -2732.78
+margin_right = 1313.49
+margin_bottom = -1232.78
+rect_rotation = 30.0
+color = Color( 0.952941, 0.952941, 0.952941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Eraser" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Eraser"]
+position = Vector2( 389.123, 1339.02 )
+rotation = 1.07861
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Eraser"]
+"anims/Erase Menu" = SubResource( 3 )
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="menumusic" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 2 )
+volume_db = -17.0
+
+[node name="Tween" type="Tween" parent="SFX/menumusic"]
+
+[node name="selectSound" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource( 12 )
+volume_db = -17.0
+
+[node name="Buttons" type="Node2D" parent="."]
+script = ExtResource( 21 )
+
+[node name="PlayButton" type="Node2D" parent="Buttons"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 125, 830 )
+scale = Vector2( 8, 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/PlayButton"]
+anims/PlayButton_FadeIn = SubResource( 4 )
+
+[node name="TextureButton" type="TextureButton" parent="Buttons/PlayButton"]
+anchor_right = 1.0
+anchor_bottom = 1.679
+margin_left = -65.0
+margin_top = -180.0
+margin_right = 198.0
+margin_bottom = 108.0
+rect_rotation = 20.0
+rect_pivot_offset = Vector2( 1, 1 )
+disabled = true
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/PlayButton/TextureButton"]
+margin_left = 39.0
+margin_top = 115.0
+margin_right = 441.0
+margin_bottom = 283.0
+rect_scale = Vector2( 0.46, 0.46 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.784314, 0.784314, 0.784314, 1 )
+text = "Start"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Buttons/PlayButton/TextureButton/Label"]
+
+[node name="Tween" type="Tween" parent="Buttons/PlayButton"]
+
+[node name="Banners" type="Node2D" parent="Buttons"]
+
+[node name="history_node" type="Node2D" parent="Buttons/Banners"]
+position = Vector2( 590, 382 )
+
+[node name="history_btn" type="TextureButton" parent="Buttons/Banners/history_node"]
+margin_right = 1200.0
+margin_bottom = 300.0
+rect_scale = Vector2( 0.3, 0.25 )
+disabled = true
+texture_normal = ExtResource( 18 )
+texture_hover = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/Banners/history_node/history_btn"]
+margin_left = 80.0
+margin_top = 30.0
+margin_right = 516.0
+margin_bottom = 255.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Buttons/Banners/history_node"]
+
+[node name="creds_node" type="Node2D" parent="Buttons/Banners"]
+position = Vector2( 590, 552 )
+
+[node name="creds_btn" type="TextureButton" parent="Buttons/Banners/creds_node"]
+margin_right = 1200.0
+margin_bottom = 300.0
+rect_scale = Vector2( 0.3, 0.25 )
+disabled = true
+texture_normal = ExtResource( 19 )
+texture_hover = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/Banners/creds_node/creds_btn"]
+margin_left = 80.0
+margin_top = 30.0
+margin_right = 516.0
+margin_bottom = 255.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Buttons/Banners/creds_node"]
+
+[node name="quit_node" type="Node2D" parent="Buttons/Banners"]
+position = Vector2( 590, 658 )
+
+[node name="quit_btn" type="TextureButton" parent="Buttons/Banners/quit_node"]
+margin_right = 1200.0
+margin_bottom = 300.0
+rect_scale = Vector2( 0.3, 0.25 )
+disabled = true
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/Banners/quit_node/quit_btn"]
+margin_left = 80.0
+margin_top = 30.0
+margin_right = 516.0
+margin_bottom = 255.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Buttons/Banners/quit_node"]
+
+[connection signal="animation_started" from="Eraser/AnimationPlayer" to="Buttons/PlayButton" method="_on_AnimationPlayer_animation_started"]
+[connection signal="finished" from="SFX/menumusic" to="Background/Title" method="_on_menumusic_finished"]
+[connection signal="pressed" from="Buttons/PlayButton/TextureButton" to="Buttons" method="_on_PlayButton_pressed"]
+[connection signal="tween_completed" from="Buttons/PlayButton/TextureButton/Label/Tween" to="Buttons" method="_on_Tween_tween_completed"]
+[connection signal="pressed" from="Buttons/Banners/history_node/history_btn" to="Buttons" method="_on_history_btn_pressed"]
+[connection signal="pressed" from="Buttons/Banners/creds_node/creds_btn" to="Buttons" method="_on_creds_btn_pressed"]
+[connection signal="pressed" from="Buttons/Banners/quit_node/quit_btn" to="Buttons" method="_on_quit_btn_pressed"]

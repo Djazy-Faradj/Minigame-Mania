@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/textures/mainmenu/green_background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/textures/mouth.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/OptionsScene.gd" type="Script" id=3]
+
+[node name="Options" type="Node2D"]
+position = Vector2( 0, 1024 )
+script = ExtResource( 3 )
+
+[node name="BG" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Node2D" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="BackButton"]
+margin_left = 53.4539
+margin_top = 726.973
+margin_right = 973.454
+margin_bottom = 1304.97
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="pressed" from="BackButton/TextureButton" to="." method="_on_BackButton_pressed"]

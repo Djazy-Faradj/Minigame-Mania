@@ -1,0 +1,103 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Scenes/Minigames/Still.gd" type="Script" id=1]
+[ext_resource path="res://Assets/font1/SimpleLife.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/textures/still/still2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/textures/still/still1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/textures/still/still3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/textures/still/fall_left3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/textures/still/fell.png" type="Texture" id=7]
+[ext_resource path="res://Assets/textures/still/fall_left4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/textures/still/fall_left5.png" type="Texture" id=9]
+[ext_resource path="res://Assets/textures/still/fall_right1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/textures/still/fall_left1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/textures/still/fall_left2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/textures/still/fall_right2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/textures/still/fall_right3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/textures/still/fall_right4.png" type="Texture" id=15]
+[ext_resource path="res://Assets/textures/still/fall_right5.png" type="Texture" id=16]
+[ext_resource path="res://Assets/textures/still/left.png" type="Texture" id=17]
+[ext_resource path="res://Assets/textures/still/right1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/textures/still/left2.png" type="Texture" id=19]
+[ext_resource path="res://Assets/textures/still/right2.png" type="Texture" id=20]
+[ext_resource path="res://Assets/textures/still/right3.png" type="Texture" id=21]
+[ext_resource path="res://Assets/textures/still/left3.png" type="Texture" id=22]
+[ext_resource path="res://Assets/audio/screaming.wav" type="AudioStream" id=23]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+outline_size = 2
+outline_color = Color( 0.188235, 0.188235, 0.188235, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "right leaning",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "left leaning",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "left falling",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "right falling",
+"speed": 7.0
+} ]
+
+[node name="Still" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+margin_right = 576.0
+margin_bottom = 1024.0
+color = Color( 0.952941, 0.952941, 0.952941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 6.0
+margin_right = 233.0
+margin_bottom = 188.0
+custom_fonts/font = SubResource( 1 )
+text = "ergsdgsdg"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TightRope Walker" type="AnimatedSprite" parent="."]
+position = Vector2( -152, 0 )
+scale = Vector2( 1.01, 1.01 )
+frames = SubResource( 2 )
+animation = "idle"
+frame = 1
+playing = true
+centered = false
+
+[node name="Screaming" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -20.0
+
+[node name="Tween" type="Tween" parent="Screaming"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

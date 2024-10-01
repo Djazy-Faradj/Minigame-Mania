@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/game.gd" type="Script" id=1]
+[ext_resource path="res://Assets/font1/SimpleLife.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/audio/wav test1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/StartLabel.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Timer.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 145
+outline_size = 2
+outline_color = Color( 0.588235, 0.588235, 0.588235, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.843137, 0.843137, 0.843137, 1 )
+border_width_left = 2
+border_color = Color( 0.203922, 0.203922, 0.203922, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 6
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+margin_right = 576.0
+margin_bottom = 1024.0
+color = Color( 0.952941, 0.952941, 0.952941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Frame" type="Node2D" parent="."]
+
+[node name="Minigame" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="Minigame"]
+
+[node name="Score" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Score"]
+margin_left = 7.13525
+margin_top = 2.37842
+margin_right = 563.135
+margin_bottom = 81.3784
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="Score"]
+wait_time = 0.1
+autostart = true
+
+[node name="StartLabel" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="StartLabel"]
+margin_top = 432.872
+margin_right = 576.0
+margin_bottom = 611.872
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.196078, 0.196078, 0.196078, 1 )
+text = "START!!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="StartLabel"]
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -60.0
+autoplay = true
+
+[node name="Tween" type="Tween" parent="GameMusic"]
+
+[node name="Timer" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="ProgressBar" type="ProgressBar" parent="Timer"]
+margin_left = 7.13525
+margin_top = 81.3784
+margin_right = 563.135
+margin_bottom = 111.378
+custom_styles/bg = SubResource( 3 )
+value = 10.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="Score/Timer" to="." method="_on_Score_Timer_timeout"]

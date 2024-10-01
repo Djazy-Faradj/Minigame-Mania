@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/textures/mouth.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Minigames/Container.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Minigames/Brushing.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Minigames/Brush.gd" type="Script" id=4]
+[ext_resource path="res://Assets/textures/brush.png" type="Texture" id=5]
+[ext_resource path="res://Assets/audio/brushing_teeth.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/Minigames/TeethSoundDetection.gd" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 43.021, 20.9146 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 221.51, 76.427 )
+
+[node name="Brushing" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+margin_top = -0.840897
+margin_right = 576.0
+margin_bottom = 1023.16
+color = Color( 0.952941, 0.952941, 0.952941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mouth" type="TextureRect" parent="."]
+margin_top = 171.12
+margin_right = 1152.0
+margin_bottom = 749.12
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dirts" type="Node2D" parent="."]
+
+[node name="Container" type="Container" parent="Dirts"]
+margin_left = 104.0
+margin_top = 243.0
+margin_right = 459.0
+margin_bottom = 338.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Brush" type="KinematicBody2D" parent="."]
+position = Vector2( 285, 800 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Brush"]
+position = Vector2( -184.347, -8.47577 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Brush"]
+position = Vector2( -0.00012207, 2.11884 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="TeethDetection" type="Area2D" parent="."]
+position = Vector2( 286, 300 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeethDetection"]
+shape = SubResource( 2 )
+
+[node name="BrushingSound" type="AudioStreamPlayer" parent="TeethDetection"]
+stream = ExtResource( 6 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="TeethDetection" to="TeethDetection" method="_on_TeethDetection_body_entered"]
+[connection signal="body_exited" from="TeethDetection" to="TeethDetection" method="_on_TeethDetection_body_exited"]
