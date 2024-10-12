@@ -33,11 +33,15 @@ The game is still in its prototype phase and is not yet available on official ap
 3. Launch the game and enjoy!
 
 ## Screen Recordings of Gameplay
-**1- Showcase of Main Menu**
-https://github.com/user-attachments/assets/4e233cdf-9405-4c14-94ec-805412ee4d27
+**1- Main Menu**
+
+[![Watch the video](https://github.com/user-attachments/assets/05594c42-1deb-4a92-b9f8-cd67c6cf3966)](https://github.com/user-attachments/assets/4e233cdf-9405-4c14-94ec-805412ee4d27 "Main menu")
+
 
 **2- Showcase of a Minigame**
-https://github.com/user-attachments/assets/a0bdb7f4-787d-4621-897a-89d54a9bcdec
+
+[![Watch the video](https://github.com/user-attachments/assets/4a4feb87-e7e1-4a66-8adc-069963a5994a)](https://github.com/user-attachments/assets/a0bdb7f4-787d-4621-897a-89d54a9bcdec "Minigame")
+
 
 
 
