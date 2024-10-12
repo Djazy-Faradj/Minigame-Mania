@@ -32,6 +32,15 @@ The game is still in its prototype phase and is not yet available on official ap
 2. Install it on your Android device.
 3. Launch the game and enjoy!
 
+## Screen Recordings of Gameplay
+**1- Showcase of Main Menu**
+https://github.com/user-attachments/assets/4e233cdf-9405-4c14-94ec-805412ee4d27
+
+**2- Showcase of a Minigame**
+https://github.com/user-attachments/assets/a0bdb7f4-787d-4621-897a-89d54a9bcdec
+
+
+
 ## Future Plans
 - **Additional Minigames**: Expand the current roster of minigames to offer more variety and fun.
 - **Polish**: Complete the menu interface and improve sound design for a more immersive experience
@@ -39,3 +48,6 @@ The game is still in its prototype phase and is not yet available on official ap
 - **Release**: Aim for an official release on Google Play Store once further features and polish are added.
 
 ---
+
+
+
