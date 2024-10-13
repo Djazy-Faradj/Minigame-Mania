@@ -28,7 +28,7 @@
 ## Installation
 The game is still in its prototype phase and is not yet available on official app stores. To play the current build, you can:
 
-1. Download the APK file from [link to APK].
+1. Download the APK file from [Direct Download Link](https://drive.google.com/uc?export=download&id=1Oc3HByiuEzsBvZRQPT3lFVh8ibL1im9p).
 2. Install it on your Android device.
 3. Launch the game and enjoy!
 
